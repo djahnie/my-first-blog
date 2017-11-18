@@ -9,8 +9,11 @@
         </div>
 
         <div>
-            <p>Content to come...</p>
-            <img src='http://dancesportlive.net/dsl/images/under_construction.gif'/>
+          {% for i in posts %}
+            <h2>{{ i.title }}</h2>
+            <p>published: {{ i.published_date }}</p>
+            <p>{{ i.text|linebreaksbr }}</p>
+          {% endfor %}
         </div>
     </body>
 </html>
