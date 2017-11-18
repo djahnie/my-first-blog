@@ -1,19 +1,33 @@
+{% load staticfiles %}
+
 <html>
     <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Oswald" rel="stylesheet">
         <title>djahnie's blog</title>
     </head>
 
     <body>
-        <div>
+        <div class="page-header">
             <h1>All things djahnie :3</h1>
         </div>
 
-        <div>
-          {% for i in posts %}
-            <h2>{{ i.title }}</h2>
-            <p>published: {{ i.published_date }}</p>
-            <p>{{ i.text|linebreaksbr }}</p>
-          {% endfor %}
+        <div class="content container">
+          <div class="row">
+            <div class="col-md-8">
+              {% for i in posts %}
+              <div class="post">
+                    <div class="date">
+                        <p>published: {{ i.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ i.title }}</a></h1>
+                    <p>{{ i.text|linebreaksbr }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
         </div>
     </body>
 </html>

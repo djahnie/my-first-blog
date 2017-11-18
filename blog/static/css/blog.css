@@ -1,0 +1,26 @@
+.page-header {
+  color: #fafafb;
+  background-color: #040404;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 36pt;
+  text-decoration: none;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
+}
+
+.content {
+  color: #040404;
+  background-color: #fafafb;
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.post {
+  margin-bottom: 70px;
+}
+
+.date{
+  color: #505052;
+  font-size: 12px;
+}
