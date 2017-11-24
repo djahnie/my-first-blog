@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseNotFound
 from django.utils import timezone
+import csv
 
 from .models import Post
 from .forms import PostForm
@@ -42,3 +43,8 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def import_csv(request):
+    with open ('residenceRecord.csv', newline='') as record_file:
+	    imported_data = csv.reader(record_file)
+	    return render(request, 'blog/show_residents.html', {'imported_data': imported_data})
