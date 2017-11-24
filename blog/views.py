@@ -44,7 +44,7 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def import_csv(request):
-    with open ('residenceRecord.csv', newline='') as record_file:
-	    imported_data = csv.reader(record_file)
+def list_residents(request):
+    with open ('blog/residenceRecord.csv', newline='') as record_file:
+	    imported_data = csv.reader(record_file, delimiter=',')
 	    return render(request, 'blog/show_residents.html', {'imported_data': imported_data})
